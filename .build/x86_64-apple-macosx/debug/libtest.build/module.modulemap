@@ -1,0 +1,4 @@
+module libtest {
+    header "/Users/hschouma/Projects/libtest/libtest/.build/x86_64-apple-macosx/debug/libtest.build/libtest-Swift.h"
+    requires objc
+}

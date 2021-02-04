@@ -1,0 +1,19 @@
+{
+  "builtTestProducts" : [
+    {
+      "binaryPath" : "\/Users\/hschouma\/Projects\/libtest\/libtest\/.build\/x86_64-apple-macosx\/debug\/libtestPackageTests.xctest\/Contents\/MacOS\/libtestPackageTests",
+      "packageName" : "libtest",
+      "productName" : "libtestPackageTests"
+    }
+  ],
+  "copyCommands" : {
+
+  },
+  "swiftTargetMap" : {
+    "C.libtest-debug.module" : "libtest",
+    "C.libtestTests-debug.module" : "libtestTests"
+  },
+  "testDiscoveryCommands" : {
+
+  }
+}

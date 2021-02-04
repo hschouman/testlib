@@ -1,0 +1,78 @@
+client:
+  name: basic
+tools: {}
+targets:
+  "PackageStructure": ["<PackageStructure>"]
+  "libtest-debug.module": ["<libtest-debug.module>"]
+  "libtestPackageTests-debug.test": ["<libtestPackageTests-debug.test>"]
+  "libtestTests-debug.module": ["<libtestTests-debug.module>"]
+  "main": ["<libtest-debug.module>"]
+  "test": ["<libtest-debug.module>","<libtestPackageTests-debug.test>","<libtestTests-debug.module>"]
+default: "main"
+nodes:
+  "/Users/hschouma/Projects/libtest/libtest/Example/Tests/":
+    is-directory-structure: true
+  "/Users/hschouma/Projects/libtest/libtest/Sources/libtest/":
+    is-directory-structure: true
+commands:
+  "<libtest-debug.module>":
+    tool: phony
+    inputs: ["/Users/hschouma/Projects/libtest/libtest/.build/x86_64-apple-macosx/debug/libtest.build/Classes/TestClass.swift.o","/Users/hschouma/Projects/libtest/libtest/.build/x86_64-apple-macosx/debug/libtest.swiftmodule"]
+    outputs: ["<libtest-debug.module>"]
+
+  "<libtestPackageTests-debug.test>":
+    tool: phony
+    inputs: ["/Users/hschouma/Projects/libtest/libtest/.build/x86_64-apple-macosx/debug/libtestPackageTests.xctest/Contents/MacOS/libtestPackageTests"]
+    outputs: ["<libtestPackageTests-debug.test>"]
+
+  "<libtestTests-debug.module>":
+    tool: phony
+    inputs: ["/Users/hschouma/Projects/libtest/libtest/.build/x86_64-apple-macosx/debug/libtestTests.build/Tests.swift.o","/Users/hschouma/Projects/libtest/libtest/.build/x86_64-apple-macosx/debug/libtestTests.swiftmodule"]
+    outputs: ["<libtestTests-debug.module>"]
+
+  "C.libtest-debug.module":
+    tool: swift-compiler
+    inputs: ["/Users/hschouma/Projects/libtest/libtest/Sources/libtest/Classes/TestClass.swift"]
+    outputs: ["/Users/hschouma/Projects/libtest/libtest/.build/x86_64-apple-macosx/debug/libtest.build/Classes/TestClass.swift.o","/Users/hschouma/Projects/libtest/libtest/.build/x86_64-apple-macosx/debug/libtest.swiftmodule"]
+    executable: "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc"
+    module-name: "libtest"
+    module-output-path: "/Users/hschouma/Projects/libtest/libtest/.build/x86_64-apple-macosx/debug/libtest.swiftmodule"
+    import-paths: ["/Users/hschouma/Projects/libtest/libtest/.build/x86_64-apple-macosx/debug"]
+    temps-path: "/Users/hschouma/Projects/libtest/libtest/.build/x86_64-apple-macosx/debug/libtest.build"
+    objects: ["/Users/hschouma/Projects/libtest/libtest/.build/x86_64-apple-macosx/debug/libtest.build/Classes/TestClass.swift.o"]
+    other-args: ["-target","x86_64-apple-macosx10.10","-swift-version","5","-enable-batch-mode","-index-store-path","/Users/hschouma/Projects/libtest/libtest/.build/x86_64-apple-macosx/debug/index/store","-sdk","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.0.sdk","-F","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks","-I","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib","-L","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib","-Onone","-enable-testing","-g","-j8","-DSWIFT_PACKAGE","-DDEBUG","-module-cache-path","/Users/hschouma/Projects/libtest/libtest/.build/x86_64-apple-macosx/debug/ModuleCache","-parseable-output","-emit-objc-header","-emit-objc-header-path","/Users/hschouma/Projects/libtest/libtest/.build/x86_64-apple-macosx/debug/libtest.build/libtest-Swift.h","-color-diagnostics"]
+    sources: ["/Users/hschouma/Projects/libtest/libtest/Sources/libtest/Classes/TestClass.swift"]
+    is-library: true
+    enable-whole-module-optimization: false
+    num-threads: 8
+
+  "C.libtestPackageTests-debug.test":
+    tool: shell
+    inputs: ["/Users/hschouma/Projects/libtest/libtest/.build/x86_64-apple-macosx/debug/libtest.build/Classes/TestClass.swift.o","/Users/hschouma/Projects/libtest/libtest/.build/x86_64-apple-macosx/debug/libtestTests.build/Tests.swift.o"]
+    outputs: ["/Users/hschouma/Projects/libtest/libtest/.build/x86_64-apple-macosx/debug/libtestPackageTests.xctest/Contents/MacOS/libtestPackageTests"]
+    description: "Linking ./.build/x86_64-apple-macosx/debug/libtestPackageTests.xctest/Contents/MacOS/libtestPackageTests"
+    args: ["/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc","-sdk","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.0.sdk","-F","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks","-I","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib","-L","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib","-L","/Users/hschouma/Projects/libtest/libtest/.build/x86_64-apple-macosx/debug","-o","/Users/hschouma/Projects/libtest/libtest/.build/x86_64-apple-macosx/debug/libtestPackageTests.xctest/Contents/MacOS/libtestPackageTests","-module-name","libtestPackageTests","-Xlinker","-bundle","-Xlinker","-rpath","-Xlinker","@loader_path/../../../","@/Users/hschouma/Projects/libtest/libtest/.build/x86_64-apple-macosx/debug/libtestPackageTests.product/Objects.LinkFileList","-Xlinker","-rpath","-Xlinker","/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx","-target","x86_64-apple-macosx10.15","-Xlinker","-add_ast_path","-Xlinker","/Users/hschouma/Projects/libtest/libtest/.build/x86_64-apple-macosx/debug/libtest.swiftmodule","-Xlinker","-add_ast_path","-Xlinker","/Users/hschouma/Projects/libtest/libtest/.build/x86_64-apple-macosx/debug/libtestTests.swiftmodule","-L","/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib"]
+
+  "C.libtestTests-debug.module":
+    tool: swift-compiler
+    inputs: ["/Users/hschouma/Projects/libtest/libtest/Example/Tests/Tests.swift","/Users/hschouma/Projects/libtest/libtest/.build/x86_64-apple-macosx/debug/libtest.swiftmodule"]
+    outputs: ["/Users/hschouma/Projects/libtest/libtest/.build/x86_64-apple-macosx/debug/libtestTests.build/Tests.swift.o","/Users/hschouma/Projects/libtest/libtest/.build/x86_64-apple-macosx/debug/libtestTests.swiftmodule"]
+    executable: "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc"
+    module-name: "libtestTests"
+    module-output-path: "/Users/hschouma/Projects/libtest/libtest/.build/x86_64-apple-macosx/debug/libtestTests.swiftmodule"
+    import-paths: ["/Users/hschouma/Projects/libtest/libtest/.build/x86_64-apple-macosx/debug"]
+    temps-path: "/Users/hschouma/Projects/libtest/libtest/.build/x86_64-apple-macosx/debug/libtestTests.build"
+    objects: ["/Users/hschouma/Projects/libtest/libtest/.build/x86_64-apple-macosx/debug/libtestTests.build/Tests.swift.o"]
+    other-args: ["-target","x86_64-apple-macosx10.15","-swift-version","5","-enable-batch-mode","-index-store-path","/Users/hschouma/Projects/libtest/libtest/.build/x86_64-apple-macosx/debug/index/store","-sdk","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.0.sdk","-F","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks","-I","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib","-L","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib","-Onone","-enable-testing","-g","-j8","-DSWIFT_PACKAGE","-DDEBUG","-module-cache-path","/Users/hschouma/Projects/libtest/libtest/.build/x86_64-apple-macosx/debug/ModuleCache","-parseable-output","-color-diagnostics"]
+    sources: ["/Users/hschouma/Projects/libtest/libtest/Example/Tests/Tests.swift"]
+    is-library: true
+    enable-whole-module-optimization: false
+    num-threads: 8
+
+  "PackageStructure":
+    tool: package-structure-tool
+    inputs: ["/Users/hschouma/Projects/libtest/libtest/Example/Tests/","/Users/hschouma/Projects/libtest/libtest/Sources/libtest/","/Users/hschouma/Projects/libtest/libtest/Package.swift","/Users/hschouma/Projects/libtest/libtest/Package.resolved"]
+    outputs: ["<PackageStructure>"]
+    description: "Planning build"
+    allow-missing-inputs: true
+

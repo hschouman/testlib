@@ -1,0 +1,24 @@
+### Swift dependencies file v0 ###
+provides-top-level:
+- "TestClass"
+provides-nominal:
+- "7libtest9TestClassC"
+provides-member:
+- ["7libtest9TestClassC", ""]
+provides-dynamic-lookup:
+- "variable"
+depends-top-level:
+- "StringLiteralType"
+- "TestClass"
+depends-member:
+- ["7libtest9TestClassC", "deinit"]
+- ["7libtest9TestClassC", "init"]
+- ["7libtest9TestClassC", "variable"]
+- ["s34_ExpressibleByBuiltinStringLiteralP", "init"]
+depends-nominal:
+- "7libtest9TestClassC"
+- "s34_ExpressibleByBuiltinStringLiteralP"
+depends-dynamic-lookup:
+depends-external:
+- "/Users/hschouma/Projects/libtest/libtest/.build/x86_64-apple-macosx/debug/libtest.build/module.modulemap"
+interface-hash: "d40c2e3a88369129b86da50558f97316"

@@ -1,0 +1,11 @@
+{
+  "": {
+    "swift-dependencies": "/Users/hschouma/Projects/libtest/libtest/.build/x86_64-apple-macosx/debug/libtest.build/master.swiftdeps"
+  },
+  "/Users/hschouma/Projects/libtest/libtest/Sources/libtest/Classes/TestClass.swift": {
+    "dependencies": "/Users/hschouma/Projects/libtest/libtest/.build/x86_64-apple-macosx/debug/libtest.build/Classes/TestClass.d",
+    "object": "/Users/hschouma/Projects/libtest/libtest/.build/x86_64-apple-macosx/debug/libtest.build/Classes/TestClass.swift.o",
+    "swiftmodule": "/Users/hschouma/Projects/libtest/libtest/.build/x86_64-apple-macosx/debug/libtest.build/Classes/TestClass~partial.swiftmodule",
+    "swift-dependencies": "/Users/hschouma/Projects/libtest/libtest/.build/x86_64-apple-macosx/debug/libtest.build/Classes/TestClass.swiftdeps"
+  }
+}

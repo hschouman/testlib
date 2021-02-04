@@ -1,0 +1,5 @@
+version: "Apple Swift version 5.3.1 (swiftlang-1200.0.41 clang-1200.0.32.8)"
+options: "683414e80aab1ef652f60bc995ff6de7"
+build_time: [1612447786, 613741000]
+inputs:
+  "/Users/hschouma/Projects/libtest/libtest/Example/Tests/Tests.swift": [1612447260, 794739176]
